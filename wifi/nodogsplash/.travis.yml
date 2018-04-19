@@ -1,0 +1,16 @@
+language: c
+sudo: false
+
+before_script:
+  - bash ./build_libmicrohttpd.sh --compile
+
+script:
+ - make
+
+env:
+  - CFLAGS="-I/tmp/libmicrohttpd_install/include" LDFLAGS="-L/tmp/libmicrohttpd_install/lib"
+
+addons:
+  apt:
+    packages:
+      - astyle
