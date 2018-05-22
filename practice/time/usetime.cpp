@@ -11,20 +11,28 @@ int main()
     Time total;
 
     cout << "planning time = ";
-    planning.Show();
+    cout << planning;
     cout << endl;
 
     cout << "coding time = ";
-    coding.Show();
+    cout << coding;
     cout << endl;
 
     cout << "fixing time = ";
-    fixing.Show();
+    cout << fixing;
     cout << endl;
 
-    total = coding.Sum(fixing);
-    cout << "coding.Sum(fixing) = ";
-    total.Show();
+    total = coding + fixing;
+    cout << "coding + fixing = ";
+    cout << total;
+    cout << endl;
+
+    Time morefixing(3, 28);
+    cout << "more fixing time = ";
+    cout << morefixing;
+    cout << endl;
+    total = morefixing.operator+(total);
+    cout << total;
     cout << endl;
 
     return 0;

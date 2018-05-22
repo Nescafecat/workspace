@@ -30,7 +30,7 @@ void Time::Reset(int h, int m)
     minutes = m;
 }
 
-Time Time::Sum(const Time & t) const
+Time Time::operator+(const Time & t) const
 {
     Time sum;
     sum.minutes = minutes + t.minutes;
@@ -39,7 +39,9 @@ Time Time::Sum(const Time & t) const
     return sum;
 }
 
-void Time::Show() const
+std::ostream & operator<<(std::ostream & os, const Time & t)
 {
-    std::cout << hours << " hours, " << minutes << " minutes";
+    os << t.hours << " hours, " << t.minutes << "minutes";
+    return os;
 }
+

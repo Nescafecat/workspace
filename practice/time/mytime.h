@@ -1,5 +1,6 @@
 #ifndef MYTIME_H_
 #define MYTIME_H_
+#include <iostream>
 
 class Time
 {
@@ -12,7 +13,7 @@ class Time
         void AddMin(int m);
         void AddHr(int h);
         void Reset(int h = 0, int m = 0);
-        Time Sum(const Time& t) const;
-        void Show() const;
+        Time operator+(const Time& t) const;
+        friend std::ostream & operator<<(std::ostream & os, const Time & t);
 };
 #endif
